@@ -9,14 +9,15 @@ const routes = require('./controllers');
 const path = require('path');
 require('dotenv').config();
 
-//overhead express setup with instantiation and port number
+// overhead express setup with instantiation and port number
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-//middleware
+// middleware
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-//for use of front end when thats defined
+
+// for use of front end when thats defined
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
