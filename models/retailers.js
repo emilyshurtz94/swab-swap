@@ -23,11 +23,7 @@ Retailer.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    test_type: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
+  
     tests_available: {
       type: DataTypes.INTEGER,
       allowNull: false,
