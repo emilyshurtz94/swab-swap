@@ -37,7 +37,7 @@ Retailer.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "individual",
+        model: "residents",
         key: "id",
       },
     },
