@@ -23,10 +23,6 @@ Residents.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    test_type: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
 
     tests_available: {
       type: DataTypes.INTEGER,
@@ -36,10 +32,7 @@ Residents.init(
     zip_code: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: "Residents",
-        key: "id",
-      },
+     
     },
   },
   {
