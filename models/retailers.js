@@ -32,10 +32,6 @@ Retailer.init(
     zip_code: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: "residents",
-        key: "id",
-      },
     },
   },
   {
