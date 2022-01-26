@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS swab_db;
+CREATE DATABASE swab_db;
