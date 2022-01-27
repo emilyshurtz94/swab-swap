@@ -1,11 +1,9 @@
-const { Model, DataTypes } = require("sequelize");
+const { Models, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-
-class Content extends Model {}
+class Content extends Models {}
 
 Content.init(
-
   {
     id: {
       type: DataTypes.INTEGER,
@@ -23,15 +21,14 @@ Content.init(
       allowNull: false,
     },
     resident: {
-      type: DataTypes.BOOLEAN, 
-      allowNull: true, 
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
     },
     retailer: {
-      type: DataTypes.BOOLEAN, 
-      allowNull: true, 
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
     },
     post_comment: {
-
       type: DataTypes.STRING,
     },
     date_created: {
@@ -50,10 +47,8 @@ Content.init(
     },
     contact_me: {
       type: DataTypes.STRING,
-      allowNull: true, 
-    }
- 
-
+      allowNull: true,
+    },
   },
   {
     sequelize,
@@ -65,4 +60,3 @@ Content.init(
 );
 
 module.exports = Content;
-
