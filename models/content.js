@@ -1,9 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Residents extends Model {}
 
-Residents.init(
+class Content extends Model {}
+
+Content.init(
+
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,11 +13,25 @@ Residents.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Residents_name: {
+
+    user_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    zip_code: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    resident: {
+      type: DataTypes.BOOLEAN, 
+      allowNull: true, 
+    },
+    retailer: {
+      type: DataTypes.BOOLEAN, 
+      allowNull: true, 
+    },
+    post_comment: {
+
       type: DataTypes.STRING,
     },
     date_created: {
@@ -26,13 +42,22 @@ Residents.init(
 
     tests_available: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
-
-    zip_code: {
+    tests_seeking: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-     
+      allowNull: true,
+    },
+    contact_me: {
+      type: DataTypes.STRING,
+      allowNull: true, 
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
   },
   {
@@ -40,8 +65,9 @@ Residents.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Residents",
+    modelName: "content",
   }
 );
 
-module.exports = Residents;
+module.exports = Content;
+
