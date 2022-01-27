@@ -1,0 +1,25 @@
+ <div class="card text-center">
+        <div class="card-header">
+            <h5>{{username}}</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                {{#if resident === true}}
+                <li>{{resident}}</li>
+                {{else}}
+                <li>{{retailer}}</li>
+                {{/if}}
+                <li>{{{zip_code}}}</li>
+                {{#if test_seeking=== test_seeing}}
+                <li>{{{tests_seeking}}}</li>
+                {{else}}
+                <li>{{{tests_available}}}</li>
+                {{/if}}
+                <li>{{post_comment}}</li>
+                <li>{{contact_me}}</li>
+            </p>
+        </div>
+        <div class="card-footer text-muted">
+            <p>Created by {{user.name}} on {{format_date date_created}}</p>
+        </div>
+    </div>
