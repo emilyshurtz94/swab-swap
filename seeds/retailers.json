@@ -1,0 +1,25 @@
+[
+    {
+        "retailer_name": "Walmart",
+        "description": "Now in stock, 'BinaxNOW COVID-19 Antigen Self-Test' come get yours while suppplies last!",
+        "tests_available": 100,
+        "zip_code": 85213
+    },
+    {
+        "retailer_name": "Amazon",
+        "description": "'On/Go COVID-19 Antigen Self-Test', get yours next day delivery with prime!",
+        "tests_available": 36489
+    },
+    {
+        "retailer_name": "CVS",
+        "description": "Now in stock 'FlowFlex COVID-19 Antigen Rapid Home test Kit', get yours while suppplies last!",
+        "tests_available": 100,
+        "zip_code": 85206
+    },
+    {
+        "retailer_name": "CVS",
+        "description": "Now in stock 'QuickVue At-Home OTC COVID-19 Test', get yours while supplies last!",
+        "tests_available": 100,
+        "zip_code": 85750
+    }
+]

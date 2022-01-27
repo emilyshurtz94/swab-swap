@@ -1,9 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
+
 class Content extends Model {}
 
 Content.init(
+
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,6 +13,7 @@ Content.init(
       primaryKey: true,
       autoIncrement: true,
     },
+
     user_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -28,6 +31,7 @@ Content.init(
       allowNull: true, 
     },
     post_comment: {
+
       type: DataTypes.STRING,
     },
     date_created: {
@@ -35,6 +39,7 @@ Content.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+
     tests_available: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -48,6 +53,7 @@ Content.init(
       allowNull: true, 
     }
  
+
   },
   {
     sequelize,
@@ -59,3 +65,4 @@ Content.init(
 );
 
 module.exports = Content;
+
