@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const retailerRoutes = require('./retailerRoutes');
-const residentRoutes = require('./residentRoutes');
-const zipcodeRoutes = require('./zipcodeRoutes');
+const contentRoutes = require('./contentRoutes');
+const userRoutes = require('./userRoutes');
+// const zipcodeRoutes = require('./zipcodeRoutes');
 
-router.use('/resident', residentRoutes);
-router.use('/retailer', retailerRoutes);
-router.use('/zipcode', zipcodeRoutes);
+router.use('/user', userRoutes);
+router.use('/content', contentRoutes);
+// router.use('/zipcode', zipcodeRoutes);
 
 module.exports = router;
