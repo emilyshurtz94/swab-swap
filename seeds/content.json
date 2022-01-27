@@ -1,6 +1,5 @@
 [
     {
-        "id": "",
         "user_name": "Billy Bob",
         "zip_code": 85750,
         "resident": true,
@@ -8,11 +7,10 @@
         "post_comment": "I was able to get a few extra covid tests at the store today.",
         "date_created": "",
         "tests_available": 4,
-        "tests_seeking": "",
+        "tests_seeking": 0,
         "contact_me": "billybob@gmail.com"
     },
     {
-        "id": "",
         "user_name": "Ranch123",
         "zip_code": 27834,
         "resident": true,
@@ -20,11 +18,10 @@
         "post_comment": "Linda told me i had to give my extra ones away.",
         "date_created": "",
         "tests_available": 6,
-        "tests_seeking": "",
+        "tests_seeking": 0,
         "contact_me": "hit me up on my insta ranch123"
     },
     {
-        "id": "",
         "user_name": "callmeKatie",
         "zip_code": 85750,
         "resident": true,
@@ -32,11 +29,10 @@
         "post_comment": "AZ public health sent me more than i need, got a few up for grabs",
         "date_created": "",
         "tests_available": 4,
-        "tests_seeking": "",
+        "tests_seeking": 0,
         "contact_me": "206-663-8733"
     },
     {
-        "id": "",
         "user_name": "sabinowalgreens",
         "zip_code": 85750,
         "resident": false,
@@ -44,23 +40,21 @@
         "post_comment": "we just got a big shipment, we are fully stocked",
         "date_created": "",
         "tests_available": 100,
-        "tests_seeking": "",
+        "tests_seeking": 0,
         "contact_me": "walgreens on sabino canyon and snyder"
     },
     {
-        "id": "",
         "user_name": "Big Tuna",
         "zip_code": 85206,
         "resident": true,
         "retailer": false,
         "post_comment": "Cece brought the rona back home, anyone around here have tests?",
         "date_created": "",
-        "tests_available": "",
+        "tests_available": 0,
         "tests_seeking": 2,
         "contact_me": "bigtuna@hotmail.com"
     },
     {
-        "id": "",
         "user_name": "BurgerSquatch",
         "zip_code": 85213,
         "resident": true,
@@ -68,9 +62,7 @@
         "post_comment": "i was hoarding, sorry. we have extra hanging around and they expire 03/22",
         "date_created": "",
         "tests_available": 10,
-        "tests_seeking": "",
+        "tests_seeking": 0,
         "contact_me": "520-883-1212"
     }
-
-
 ]

@@ -1,36 +1,30 @@
 [
     {
-        "id": "",
         "user_name": "Billy Bob",
         "email": "billybob@gmail.com",
         "password": "password1234"
     },
     {
-        "id": "",
         "user_name": "Ranch123",
         "email": "ranch@me.com",
         "password": "password1234"
     },
     {
-        "id": "",
         "user_name": "callmeKatie",
         "email": "katie@me.com",
         "password": "password1234"
     },
     {
-        "id": "",
         "user_name": "sabinowalgreens",
         "email": "walgreens@me.com",
         "password": "password1234"
     },
     {
-        "id": "",
         "user_name": "Big Tuna",
         "email": "bigtuna@hotmail.com",
         "password": "password1234"
     },
     {
-        "id": "",
         "user_name": "BurgerSquatch",
         "email": "burger@me.com",
         "password": "password1234"
