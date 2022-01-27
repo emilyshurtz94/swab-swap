@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Retailer extends Model {}
+class Content extends Model {}
 
-Retailer.init(
+Content.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,11 +11,23 @@ Retailer.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    retailer_name: {
+    user_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    zip_code: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    resident: {
+      type: DataTypes.BOOLEAN, 
+      allowNull: true, 
+    },
+    retailer: {
+      type: DataTypes.BOOLEAN, 
+      allowNull: true, 
+    },
+    post_comment: {
       type: DataTypes.STRING,
     },
     date_created: {
@@ -23,28 +35,27 @@ Retailer.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-  
     tests_available: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
-
-    zip_code: {
+    tests_seeking: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "residents",
-        key: "id",
-      },
+      allowNull: true,
     },
+    contact_me: {
+      type: DataTypes.STRING,
+      allowNull: true, 
+    }
+ 
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "retailer",
+    modelName: "content",
   }
 );
 
-module.exports = Retailer;
+module.exports = Content;

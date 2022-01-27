@@ -1,15 +1,15 @@
-const Residents = require('./Residents');
-const Retailers = require('./Retailers');
+const User = require('./User');
+const Content = require('./Content');
 
-Residents.belongsTo(Retailers, {
-    foreignKey: 'Retailers_id'
+User.belongsToMany(Content, {
+    foreignKey: ''
 });
 
-Retailers.hasMany(Residents, {
-    foreignKey: 'Retailers_id'
+Content.hasOne(User, {
+    foreignKey: ''
 })
 
 module.exports = {
-    Residents,
-    Retailers
+    User,
+    Content
 }
