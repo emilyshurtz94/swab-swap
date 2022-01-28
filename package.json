@@ -27,6 +27,7 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.14.1",
     "session": "^0.1.0",
+    "talkjs": "^0.15.1",
     "zipcodes": "^8.0.0"
   }
 }
