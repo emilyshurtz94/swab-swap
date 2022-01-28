@@ -1,6 +1,8 @@
+
+<a href="./form.handlebars" class="btn btn-primary"> + New Post</a>
+ 
  <div class="card text-center">
-        <div class="card-header">
-        </div>
+    
                 {{#each content}}
         <div class="card-body">
             <p class="card-text">
@@ -18,10 +20,8 @@
                 {{/if}}
                 <li>Comments:{{post_comment}}</li>
                 <li>Contact me at:{{contact_me}}</li>
+                <li>{{date}}</li>
             </p>
         </div>
                 {{/each}}
-        <div class="card-footer text-muted">
-            <p>Created by {{user.name}} on {{date}}</p>
-        </div>
     </div>
