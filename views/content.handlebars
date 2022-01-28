@@ -1,25 +1,27 @@
  <div class="card text-center">
         <div class="card-header">
-            <h5>{{username}}</h5>
         </div>
+                {{#each content}}
         <div class="card-body">
             <p class="card-text">
-                {{#if resident === true}}
-                <li>{{resident}}</li>
+            <h5>{{user_name}}</h5>
+                {{#if resident}}
+                <li>Resident:{{resident}}</li>
                 {{else}}
-                <li>{{retailer}}</li>
+                <li>Retailer:{{retailer}}</li>
                 {{/if}}
-                <li>{{{zip_code}}}</li>
-                {{#if test_seeking=== test_seeing}}
-                <li>{{{tests_seeking}}}</li>
+                <li>Zipcode:{{{zip_code}}}</li>
+                {{#if test_seeking}}
+                <li>Looking for Tests:{{{tests_seeking}}}</li>
                 {{else}}
-                <li>{{{tests_available}}}</li>
+                <li>Tests Available:{{{tests_available}}}</li>
                 {{/if}}
-                <li>{{post_comment}}</li>
-                <li>{{contact_me}}</li>
+                <li>Comments:{{post_comment}}</li>
+                <li>Contact me at:{{contact_me}}</li>
             </p>
         </div>
+                {{/each}}
         <div class="card-footer text-muted">
-            <p>Created by {{user.name}} on {{format_date date_created}}</p>
+            <p>Created by {{user.name}} on {{date}}</p>
         </div>
     </div>

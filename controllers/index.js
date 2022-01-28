@@ -1,12 +1,10 @@
 const router = require('express').Router();
 const { Content } = require('../models');
 const apiRoutes  = require('./api');
+const homeRoutes = require('./homeRoutes');
 
 router.use('/api', apiRoutes);
+router.use('/', homeRoutes);
 
-router.get('/', async (req, res) => {
-    const findAllContent  = await Content.findAll();
-    res.json(findAllContent );
-})
 
 module.exports = router;
