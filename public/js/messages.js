@@ -1,6 +1,6 @@
 //this is sample functioning code from Talkjs to demonstrate implementation of messaging feature
 
-Talk.ready.then(function () {
+Talk.ready.then(function (Talk) {
   var me = new Talk.User({
     id: "123456",
     name: "Alice",
