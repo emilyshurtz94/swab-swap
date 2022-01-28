@@ -1,15 +1,39 @@
-let residentCheckBox = document.getElementById("flexCheckDefault");
 
-let retailerCheckBox = document.getElementById("flexCheckChecked");
 
-let username = document.getElementById("floatingInput");
+const formFormHandler = async (event) => {
+    event.preventDefault();
 
-let Zipcode = document.getElementById("floatingPassword");
+const username = document.getElementById("floatingInput").value.trim();
 
-let numOfAvailableTests = document.getElementById("tests-available");
+const zipcode = document.getElementById("floatingPassword").value.trim();
 
-let numOfTestsNeeded = document.getElementById("tests_seeking");
+const residentCheckBox = document.getElementById("flexCheckDefault").value.trim();
 
-let comments = document.getElementById("post_comment");
+const retailerCheckBox = document.getElementById("flexCheckChecked").value.trim();
 
-let contactInfo = document.getElementById("contact_me");
+const numOfAvailableTests = document.getElementById("tests-available").value.trim();
+
+const numOfTestsNeeded = document.getElementById("tests_seeking").value.trim();
+
+const comments = document.getElementById("post_comment").value.trim();
+
+const contactInfo = document.getElementById("contact_me").value.trim();
+if (username && zipcode && residentCheckBox && retailerCheckBox && numOfAvailableTests && numOfAvailableTests && numOfTestsNeeded && comments && contactInfo) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({ username , zipcode, residentCheckBox, retailerCheckBox, numOfAvailableTests, numOfAvailableTests, numOfTestsNeeded, comments, contactInfo}),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.create('/content');
+    } else {
+      alert(response.statusText);
+    }
+  }
+
+}
+
+document
+.querySelector('.submit-form')
+.addEventListener('submit', formFormHandler);
