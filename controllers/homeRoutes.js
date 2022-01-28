@@ -61,10 +61,21 @@ router.get('/', (req, res) => {
   res.render('homepage');
 });
 
+// message route
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/message');
+    return;
+  }
+
+  res.render('message');
+});
+
 // form route-fix
 
 router.get('/content', withAuth, async (req, res) => {
-    res.sendFile(path.join(__dirname, './views/form.handlebars'))
+    res.sendFile(path.join(__dirname, '/form'))
 });
 // router.get('/form', withAuth, async (req, res) => {
 //     try{
