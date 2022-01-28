@@ -1,9 +1,10 @@
 const router = require("express").Router();
+const res = require("express/lib/response");
 const { Content, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Get all Content data and JOIN with user data
-router.get("/", async (req, res) => {
+router.get("/content", async (req, res) => {
   try {
     const contentData = await Content.findAll({
       include: [
@@ -16,7 +17,7 @@ router.get("/", async (req, res) => {
 
     // serlializing the data for the template.
     const content = contentData.map((content) => content.get({ plain: true }));
-
+console.log(content)
     // passing the session flag and serialized data into template.
     res.render("content", {
       content,
@@ -49,8 +50,12 @@ router.get('/content/:zip_code', async (req, res) => {
         res.json(err);
     }
 });
+// homepage route
+// router.get('/')
+// res.render('homepage')
 
-router.get('/user', withAuth, async (req, res) => {
+// form route-fix
+router.get('/form', withAuth, async (req, res) => {
     try{
         const userData = await User.findbyPK(req.session.id, {
             attributes: { exclude: ['password'] },
@@ -59,7 +64,7 @@ router.get('/user', withAuth, async (req, res) => {
 
         const user = userData.get({ plain: true });
 
-        res.render('user', {
+        res.render('form', {
             ...user,
             logged_in: true
         });
@@ -71,7 +76,7 @@ router.get('/user', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
-      res.redirect('/user');
+      res.redirect('/form');
       return;
     }
   
