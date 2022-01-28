@@ -29,7 +29,7 @@ console.log(content)
 });
 
 // get content data by zip code
-router.get('/content/:zip_code', async (req, res) => {
+router.get('/content/:zip_code', withAuth, async (req, res) => {
     try{
         const contentData = await Content.findBy(req.params.zip_code, {
             include: [
@@ -62,28 +62,30 @@ router.get('/', (req, res) => {
 });
 
 // form route-fix
-router.get('/form', withAuth, async (req, res) => {
-    try{
-        const userData = await User.findbyPK(req.session.id, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: Content }],
-        });
 
-        const user = userData.get({ plain: true });
-
-        res.render('form', {
-            ...user,
-            logged_in: true
-        });
-    } catch (err) {
-        res.json(err);
-    }
+router.get('/content', withAuth, async (req, res) => {
+    res.sendFile(path.join(__dirname, './views/form.handlebars'))
 });
+// router.get('/form', withAuth, async (req, res) => {
+//     try{
+//         const userData = await User.findbyPK(req.session.id, {
+//             attributes: { exclude: ['password'] },
+//             include: [{ model: Content }],
+//         });
+//         const user = userData.get({ plain: true });
+//         res.render('form', {
+//             ...user,
+//             logged_in: true
+//         });
+//     } catch (err) {
+//         res.json(err);
+//     }
+// });
 
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
     if (req.session.logged_in) {
-      res.redirect('/form');
+      res.redirect('/content');
       return;
     }
   
