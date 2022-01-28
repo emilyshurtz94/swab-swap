@@ -36,4 +36,4 @@ if (username && zipcode && residentCheckBox && retailerCheckBox && numOfAvailabl
 
 document
 .querySelector('.submit-form')
-.addEventListener(submit, formFormHandler);
+.addEventListener('submit', formFormHandler);
