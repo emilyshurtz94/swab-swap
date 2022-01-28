@@ -32,4 +32,4 @@ Talk.ready.then(function () {
 
 //query selector to connect to chat button on content page - not sure if 2nd parameter ("click", Talk) is correct
 
-document.querySelector("btn-chat").addEventListener("click", Talk);
+document.getElementById("chat-button").addEventListener("click", Talk);
