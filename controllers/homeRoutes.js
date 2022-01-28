@@ -51,8 +51,15 @@ router.get('/content/:zip_code', async (req, res) => {
     }
 });
 // homepage route
-// router.get('/')
-// res.render('homepage')
+router.get('/', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/homepage');
+    return;
+  }
+
+  res.render('homepage');
+});
 
 // form route-fix
 router.get('/form', withAuth, async (req, res) => {
