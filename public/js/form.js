@@ -1,18 +1,18 @@
 const formFormHandler = async (event) => {
   event.preventDefault();
-
+console.log(event)
   const username = document.getElementById("floatingInput").value.trim();
 
   const zipcode = document.getElementById("floatingPassword").value.trim();
 
   const residentCheckBox = document
-    .getElementById("flexCheckDefault")
-    .value.trim();
-
+    .getElementById("flexCheckDefault").checked
+    
+console.log(residentCheckBox)
   const retailerCheckBox = document
-    .getElementById("flexCheckChecked")
-    .value.trim();
-
+    .getElementById("flexCheckChecked").checked
+    
+console.log(retailerCheckBox)
   const numOfAvailableTests = document
     .getElementById("tests-available")
     .value.trim();
@@ -35,30 +35,31 @@ const formFormHandler = async (event) => {
     comments &&
     contactInfo
   ) {
-    const response = await fetch("/api/users", {
+    const response = await fetch("/api/content", {
       method: "POST",
       body: JSON.stringify({
-        username,
-        zipcode,
-        residentCheckBox,
-        retailerCheckBox,
-        numOfAvailableTests,
-        numOfAvailableTests,
-        numOfTestsNeeded,
-        comments,
-        contactInfo,
+        user_name: username,
+        zip_code: zipcode,
+        resident: residentCheckBox,
+        retailer: retailerCheckBox,
+        tests_available: numOfAvailableTests,
+        tests_seeking: numOfTestsNeeded,
+        post_comment: comments,
+        contact_me: contactInfo,
       }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.create("/content");
+      window.location.href = "/content"
     } else {
       alert(response.statusText);
     }
+  } else {
+    console.log('somethings missing')
   }
 };
 
 document
   .querySelector(".submit-form")
-  .addEventListener("submit", formFormHandler);
+  .addEventListener("click", formFormHandler);
