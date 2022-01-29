@@ -1,6 +1,12 @@
-
+*{
+    padding:5px;
+}
 .navbar-nav {
     flex-direction: row;
+}
+
+ul{
+    list-style-type:none;
 }
 
 .navbar-brand{
@@ -11,4 +17,14 @@ width: 160px
 .homepage-header h1{
     font-size: 100px;
     color: rgb(103, 14, 103)
+}
+
+#login_box{
+    display:inline-flex;
+    margin:5px
+}
+
+#signup_box{
+    display:inline-flex;
+    margin:5px
 }

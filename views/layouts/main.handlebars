@@ -12,8 +12,8 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <header >
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
       <div class="container-fluid">
         <img class="navbar-brand" src="/assets/swab swap.png"></img>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -24,10 +24,9 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               {{#if logged_in}}
-              <a href="/profile">profile</a> |
               <button class="no-button" id="logout">logout</button>
               {{else}}
-              <a class="nav-link active" aria-current="page" href="#">Login</a>
+              <a class="nav-link active" aria-current="page" href="../login.handlebars">Login</a>
               {{/if}}
             </li>
             <form class="d-flex">
