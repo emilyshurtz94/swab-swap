@@ -62,7 +62,7 @@ router.get('/', (req, res) => {
 });
 
 // message route
-router.get('/login', (req, res) => {
+router.get('/content', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/message');
@@ -74,24 +74,24 @@ router.get('/login', (req, res) => {
 
 // form route-fix
 
-router.get('/content', withAuth, async (req, res) => {
-    res.sendFile(path.join(__dirname, '/form'))
-});
-// router.get('/form', withAuth, async (req, res) => {
-//     try{
-//         const userData = await User.findbyPK(req.session.id, {
-//             attributes: { exclude: ['password'] },
-//             include: [{ model: Content }],
-//         });
-//         const user = userData.get({ plain: true });
-//         res.render('form', {
-//             ...user,
-//             logged_in: true
-//         });
-//     } catch (err) {
-//         res.json(err);
-//     }
+// router.get('/content', withAuth, async (req, res) => {
+//     res.sendFile(path.join(__dirname, '/form'))
 // });
+router.get('/form', withAuth, async (req, res) => {
+  try{
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Content }],
+        });
+        const user = userData.get({ plain: true });
+        res.render('form', {
+            ...user,
+            logged_in: true
+        });
+    } catch (err) {
+        res.json(err.message);
+    }
+});
 
 router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
