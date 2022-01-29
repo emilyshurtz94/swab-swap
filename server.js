@@ -8,6 +8,7 @@ const path = require('path');
 const routes = require('./controllers');
 const date = require('./utils/date');
 require('dotenv').config();
+var talk = require("talkjs")
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store)
@@ -46,3 +47,4 @@ sequelize.sync({force:false}).then(() => {
         console.log('listening');
     })
 });
+
