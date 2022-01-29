@@ -3,6 +3,15 @@ const res = require("express/lib/response");
 const { Content, User } = require("../models");
 const withAuth = require("../utils/auth");
 
+router.get('/homepage', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/content');
+    return;
+  }
+  res.render('homepage');
+});
+
 // Get all Content data and JOIN with user data
 router.get("/content", async (req, res) => {
   try {
