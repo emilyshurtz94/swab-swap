@@ -26,7 +26,10 @@ router.get("/content", async (req, res) => {
 
     // serlializing the data for the template.
     const content = contentData.map((content) => content.get({ plain: true }));
-console.log(content)
+    // console.log(content.filter(post => {
+    //   return post.zip_code == 85206
+    // }))
+// console.log(content)
     // passing the session flag and serialized data into template.
     res.render("content", {
       content,
@@ -49,9 +52,9 @@ router.get('/content/:zip_code', withAuth, async (req, res) => {
             ],
         });
 
-        const content = contentData.get({plain: true});
+        const content = contentData.get({plain: true}).filter(post => post.zip_code == req.params.zip_code);
 
-        res.render('content', {
+        res.render('/content/:zip_code', {
             ...content,
             logged_in: req.params.logged_in
         });
