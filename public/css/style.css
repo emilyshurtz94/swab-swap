@@ -1,5 +1,6 @@
 *{
     padding:5px;
+    font-family: 'Raleway', sans-serif;
 }
 .navbar-nav {
     flex-direction: row;
