@@ -27,8 +27,8 @@ console.log(retailerCheckBox)
   if (
     username &&
     zipcode &&
-    residentCheckBox &&
-    retailerCheckBox &&
+   // residentCheckBox &&
+   // retailerCheckBox &&
     numOfAvailableTests &&
     numOfAvailableTests &&
     numOfTestsNeeded &&
