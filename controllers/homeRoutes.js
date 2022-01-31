@@ -74,14 +74,16 @@ router.get('/', (req, res) => {
 });
 
 // message route
-router.get('/content', (req, res) => {
+router.get('/message', (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/message');
+  if (!req.session.logged_in) {
+    res.redirect('/login');
     return;
   }
 
-  res.render('message');
+  res.render('message', {
+    logged_in: req.session.logged_in
+  });
 });
 
 // form route-fix
