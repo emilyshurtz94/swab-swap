@@ -28,5 +28,25 @@
         "user_name": "BurgerSquatch",
         "email": "burger@me.com",
         "password": "password1234"
+    },
+    {
+        "user_name": "Lincy",
+        "email": "Timmy55@giants.com",
+        "password": "password1234"
+    },
+    {
+        "user_name": "contactSuzuki",
+        "email": "Ichi@ro.com",
+        "password": "password1234"
+    },
+    {
+        "user_name": "Sunny",
+        "email": "Zay@TDE.com",
+        "password": "password1234"
+    },
+    {
+        "user_name": "ShufflinRuffin",
+        "email": "David@ruffin.com",
+        "password": "password1234"
     }
 ]

@@ -3,4 +3,6 @@
 var homebtn = document.querySelector (".navbar-brand")
 homebtn.addEventListener("click", function(){
     window.location.href = "/homepage"
-})
+
+});
+
