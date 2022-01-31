@@ -15,6 +15,9 @@ console.log(event)
   // const retailerCheckBox = document
   //   .getElementById("flexCheckChecked").checked
   //   console.log(retailerCheckBox)
+
+  // const personStatus= document.getElementById("status")
+  // console.log(personStatus)
   
  
   const numOfAvailableTests = document

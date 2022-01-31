@@ -4,10 +4,10 @@
 <a href="/form" class="btn btn-primary"> + New Post</a>
 
  
- <div class="card text-center" style="background-color: #e3f2fd;;border:solid">
     
                 {{#each content}}
-
+<div class="container">
+ <div class="card text-center" style="background-color: #e3f2fd;;border:solid">
         <div class="card-body">
             <p class="card-text">
             <h5>{{user_name}}</h5>
@@ -26,8 +26,9 @@
             <li>Contact me at: {{ contact_me }}</li>
             </p>
         </div>
-        {{/each}}
         {{!-- <div class="card-footer text-muted">
             <p>Created by {{user.name}} on {{date}}</p>
         </div> --}}
     </div>
+</div>
+        {{/each}}
