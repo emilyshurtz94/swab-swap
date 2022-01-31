@@ -1,16 +1,13 @@
-<a href="/message" class="btn btn-primary" id="chat-button"> Chat</a>
-
 <a href="/form" class="btn btn-primary"> + New Post</a>
-
- 
-    
+   <div id="cards"> 
                 {{#each content}}
 <div class="container">
  <div class="card text-center" style="background-color: #e3f2fd;;border:solid 1px">
+<a href="/message" class="btn btn-primary" id="chat-button"> Chat</a>
         <div class="card-body">
             <p class="card-text">
             <h5>{{user_name}}</h5>
-            <li>Zipcode: {{{ zip_code }}}</li>
+            <li id="zipCode">Zipcode: {{{ zip_code }}}</li>
             {{#if test_seeking}}
             <li>Looking for Tests: {{{ tests_seeking }}}</li>
             {{else}}
@@ -20,6 +17,11 @@
             <li>Contact me at: {{ contact_me }}</li>
             </p>
         </div>
+<div class="col-md-4">
+        <button class="btn btn-sm btn-danger delete-form" data-id="{{id}}">DELETE</button>
+      </div>
     </div>
 </div>
         {{/each}}
+</div>
+        <script src="/js/deleteForm.js"></script>
