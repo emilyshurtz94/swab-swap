@@ -52,7 +52,7 @@ router.get('/content/:zip_code', withAuth, async (req, res) => {
             ],
         });
 
-        const content = contentData.get({plain: true}).filter(post => post.zip_code == req.params.zip_code);
+        const content = contentData.get({plain: true}).filter(post => post.zip_code === req.params.zip_code);
 
         res.render('/content/:zip_code', {
             ...content,
