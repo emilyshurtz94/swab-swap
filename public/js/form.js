@@ -6,18 +6,6 @@ console.log(event)
 
   const zipcode = document.getElementById("floatingPassword").value.trim();
   console.log(zipcode)
-
-  // const residentCheckBox = document
-  //   .getElementById("flexCheckDefault").checked
-  //   console.log(residentCheckBox)
-    
-
-  // const retailerCheckBox = document
-  //   .getElementById("flexCheckChecked").checked
-  //   console.log(retailerCheckBox)
-
-  // const personStatus= document.getElementById("status")
-  // console.log(personStatus)
   
  
   const numOfAvailableTests = document
@@ -35,14 +23,10 @@ console.log(event)
 
   const contactInfo = document.getElementById("contact_me").value.trim();
   console.log(contactInfo)
-//removed checkboxes from if block- find alt way to handle
+
   if (
     username &&
     zipcode &&
-
-   // residentCheckBox &&
-   // retailerCheckBox &&
-
     numOfAvailableTests &&
     numOfAvailableTests &&
     numOfTestsNeeded &&
