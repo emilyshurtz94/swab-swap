@@ -26,7 +26,10 @@ router.get("/content", async (req, res) => {
 
     // serlializing the data for the template.
     const content = contentData.map((content) => content.get({ plain: true }));
-console.log(content)
+    // console.log(content.filter(post => {
+    //   return post.zip_code == 85206
+    // }))
+// console.log(content)
     // passing the session flag and serialized data into template.
     res.render("content", {
       content,
@@ -49,9 +52,9 @@ router.get('/content/:zip_code', withAuth, async (req, res) => {
             ],
         });
 
-        const content = contentData.get({plain: true});
+        const content = contentData.get({plain: true}).filter(post => post.zip_code == req.params.zip_code);
 
-        res.render('content', {
+        res.render('/content/:zip_code', {
             ...content,
             logged_in: req.params.logged_in
         });
@@ -71,14 +74,16 @@ router.get('/', (req, res) => {
 });
 
 // message route
-router.get('/content', (req, res) => {
+router.get('/message', (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/message');
+  if (!req.session.logged_in) {
+    res.redirect('/login');
     return;
   }
 
-  res.render('message');
+  res.render('message', {
+    logged_in: req.session.logged_in
+  });
 });
 
 // form route-fix
