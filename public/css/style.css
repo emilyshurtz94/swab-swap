@@ -1,36 +1,36 @@
-*{
-    padding:5px;
-    font-family: 'Raleway', sans-serif;
+* {
+  padding: 5px;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 .navbar-nav {
-    flex-direction: row;
+  flex-direction: row;
 }
 
-ul{
-    list-style-type:none;
+ul {
+  list-style-type: none;
 }
 
-li{
-    list-style-type:none;
+li {
+  list-style-type: none;
 }
 
-
-.navbar-brand{
-height: 160px;
-width: 160px
+.navbar-brand {
+  height: 160px;
+  width: 160px;
 }
 
-.homepage-header h1{
-    font-size: 100px;
-    color: rgb(103, 14, 103)
+.homepage-header h1 {
+  font-size: 100px;
+  color: rgb(103, 14, 103);
 }
 
-#login_box{
-    display:inline-flex;
-    margin:5px
+#login_box {
+  display: inline-flex;
+  margin: 5px;
 }
 
-#signup_box{
-    display:inline-flex;
-    margin:5px
+#signup_box {
+  display: inline-flex;
+  margin: 5px;
 }
+
