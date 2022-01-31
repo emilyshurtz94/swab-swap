@@ -26,10 +26,6 @@ router.get("/content", async (req, res) => {
 
     // serlializing the data for the template.
     const content = contentData.map((content) => content.get({ plain: true }));
-    // console.log(content.filter(post => {
-    //   return post.zip_code == 85206
-    // }))
-// console.log(content)
     // passing the session flag and serialized data into template.
     res.render("content", {
       content,
@@ -54,6 +50,11 @@ router.get('/content/:zip_code', withAuth, async (req, res) => {
 
         const content = contentData.get({plain: true}).filter(post => post.zip_code === req.params.zip_code);
 
+        if (!req.session.logged_in) {
+          res.redirect('/login');
+          return
+        }
+
         res.render('/content/:zip_code', {
             ...content,
             logged_in: req.params.logged_in
@@ -62,6 +63,7 @@ router.get('/content/:zip_code', withAuth, async (req, res) => {
         res.json(err);
     }
 });
+
 // homepage route
 router.get('/', (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -87,10 +89,6 @@ router.get('/message', (req, res) => {
 });
 
 // form route-fix
-
-// router.get('/content', withAuth, async (req, res) => {
-//     res.sendFile(path.join(__dirname, '/form'))
-// });
 router.get('/form', withAuth, async (req, res) => {
   try{
         const userData = await User.findByPk(req.session.user_id, {
