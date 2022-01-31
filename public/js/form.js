@@ -36,6 +36,10 @@ console.log(event)
   if (
     username &&
     zipcode &&
+
+   // residentCheckBox &&
+   // retailerCheckBox &&
+
     numOfAvailableTests &&
     numOfAvailableTests &&
     numOfTestsNeeded &&
