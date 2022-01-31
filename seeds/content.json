@@ -2,8 +2,6 @@
     {
         "user_name": "Billy Bob",
         "zip_code": 85750,
-        "resident": true,
-        "retailer": false,
         "post_comment": "I was able to get a few extra covid tests at the store today.",
         "date_created": "2022-01-25 21:01:47",
         "tests_available": 4,
@@ -13,8 +11,6 @@
     {
         "user_name": "Ranch123",
         "zip_code": 27834,
-        "resident": true,
-        "retailer": false,
         "post_comment": "Linda told me i had to give my extra ones away.",
         "date_created": "2022-01-25 21:01:47",
         "tests_available": 6,
@@ -24,8 +20,6 @@
     {
         "user_name": "callmeKatie",
         "zip_code": 85750,
-        "resident": true,
-        "retailer": false,
         "post_comment": "AZ public health sent me more than i need, got a few up for grabs",
         "date_created":"2022-01-25 21:01:47",
         "tests_available": 4,
@@ -35,8 +29,6 @@
     {
         "user_name": "sabinowalgreens",
         "zip_code": 85750,
-        "resident": false,
-        "retailer": true,
         "post_comment": "we just got a big shipment, we are fully stocked",
         "date_created":"2022-01-25 21:01:47",
         "tests_available": 100,
@@ -46,8 +38,6 @@
     {
         "user_name": "Big Tuna",
         "zip_code": 85206,
-        "resident": true,
-        "retailer": false,
         "post_comment": "Cece brought the rona back home, anyone around here have tests?",
         "date_created":"2022-01-25 21:01:47",
         "tests_available": 0,
@@ -57,12 +47,46 @@
     {
         "user_name": "BurgerSquatch",
         "zip_code": 85213,
-        "resident": true,
-        "retailer": false,
         "post_comment": "i was hoarding, sorry. we have extra hanging around and they expire 03/22",
         "date_created":"2022-01-25 21:01:47",
         "tests_available": 10,
         "tests_seeking": 0,
         "contact_me": "520-883-1212"
+    },
+    {
+        "user_name": "Lincy",
+        "zip_code": 85206,
+        "post_comment": "Got an interview to caoch the Giants and they will provide a test for me, would anyone want my extra tests?",
+        "date_created":"2022-01-25 21:01:47",
+        "tests_available": 5,
+        "tests_seeking": 0,
+        "contact_me": "Timmy55@giants.com"
+    },
+    {
+        "user_name": "contactSuzuki",
+        "zip_code": 85213,
+        "post_comment": "Ichiro will be hosting a drive through Covid test clinic and hes making his way to AZ to collaborate with Maddison bumgarner!",
+        "date_created":"2022-01-25 21:01:47",
+        "tests_available": 15000,
+        "tests_seeking": 0,
+        "contact_me": "Tests start at 7am, and end at 7pm. Follow the signs to get in line!"
+    },
+    {
+        "user_name": "Sunny",
+        "zip_code": 27834,
+        "post_comment": "Ayo whoevers got 20 extra tests for my tour bus gets free tickets to the show, Only responding to the FIRST email. -Sunny Management",
+        "date_created":"2022-01-25 21:01:47",
+        "tests_available": 0,
+        "tests_seeking": 20,
+        "contact_me": "Zay@TDE.com"
+    },
+    {
+        "user_name": "GentlemanRuffin",
+        "zip_code": 85750,
+        "post_comment": "I got a thing for you... its called a covid test. Dont make others sick!",
+        "date_created":"2022-01-25 21:01:47",
+        "tests_available": 50,
+        "tests_seeking": 0,
+        "contact_me": "David@ruffin.com"
     }
 ]
