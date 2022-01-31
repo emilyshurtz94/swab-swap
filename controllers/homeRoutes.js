@@ -49,10 +49,12 @@ router.get('/content/:zip_code', withAuth, async (req, res) => {
         });
 
         const content = contentData.get({plain: true}).filter(post => post.zip_code === req.params.zip_code);
+
         if (!req.session.logged_in) {
           res.redirect('/login');
           return
         }
+
         res.render('/content/:zip_code', {
             ...content,
             logged_in: req.params.logged_in
