@@ -17,4 +17,4 @@ https://swab-swap.herokuapp.com/
   
   
 ## Contributors:
-Cesar Olquin, Karrie Garzelloni, Trey Rogers, and Emily Shurtz
+Cesar Olguin, Karrie Garzelloni, Trey Rogers, and Emily Shurtz
