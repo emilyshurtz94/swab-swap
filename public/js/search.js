@@ -1,18 +1,9 @@
-const searchBtn = async (event) => {
-    event.preventDefault();
-    console.log(event)
-    const search = document.getElementById("searchBtn")
-    const zipCode = document.getElementById("zipCode")
-    if(search) {
-        const response = await fetch("/api/content", {
-            method: "POST"
-        });
+const searchBtn = document.getElementById('searchBtn');
 
-        const data = await response.json();
-        if(data == zipCode)
-        location.reload()
-    } else {
-        console.log(data)
-    }
+
+const searchHandler = async (event) => {
+    event.preventDefault();
+    const zipcode = document.getElementById("searchZipcode").value
+    window.location.href=`/content/${zipcode}`
 }
-document.addEventListener("click", searchBtn)
+    document.getElementById("searchForm").addEventListener("submit", searchHandler) 
