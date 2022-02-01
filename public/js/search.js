@@ -1,10 +1,18 @@
 const searchBtn = async (event) => {
     event.preventDefault();
-    const zipcode = document.getElementById("zipCode")
-    if(zipcode.ok) {
-        window.location.href = "/content"
+    console.log(event)
+    const search = document.getElementById("searchBtn")
+    const zipCode = document.getElementById("zipCode")
+    if(search) {
+        const response = await fetch("/api/content", {
+            method: "POST"
+        });
+
+        const data = await response.json();
+        if(data == zipCode)
+        location.reload()
     } else {
-        alert(zipcode.statusText)
+        console.log(data)
     }
 }
 document.addEventListener("click", searchBtn)
