@@ -38,30 +38,31 @@ router.get("/content", async (req, res) => {
 
 // get content data by zip code
 router.get('/content/:zip_code', withAuth, async (req, res) => {
-    try{
-        const contentData = await Content.findBy(req.params.zip_code, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['user_name']
-                },
-            ],
-        });
+  try {
+    const contentData = await Content.findAll({
+      where: {
+        zip_code: req.params.zip_code
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['user_name']
+        },
+      ],
+    });
+    const content = contentData.map((content) => content.get({ plain: true }));
 
-        const content = contentData.get({plain: true}).filter(post => post.zip_code === req.params.zip_code);
-
-        if (!req.session.logged_in) {
-          res.redirect('/login');
-          return
-        }
-
-        res.render('/content/:zip_code', {
-            ...content,
-            logged_in: req.params.logged_in
-        });
-    } catch (err) {
-        res.json(err);
+    if (!req.session.logged_in) {
+      res.redirect('/login');
+      return
     }
+    res.render('content', {
+     content,
+      logged_in: req.params.logged_in
+    });
+  } catch (err) {
+    res.json(err.message);
+  }
 });
 
 // homepage route
@@ -90,29 +91,29 @@ router.get('/message', (req, res) => {
 
 // form route-fix
 router.get('/form', withAuth, async (req, res) => {
-  try{
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: Content }],
-        });
-        const user = userData.get({ plain: true });
-        res.render('form', {
-            ...user,
-            logged_in: true
-        });
-    } catch (err) {
-        res.json(err.message);
-    }
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Content }],
+    });
+    const user = userData.get({ plain: true });
+    res.render('form', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.json(err.message);
+  }
 });
 
 router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/content');
-      return;
-    }
-  
-    res.render('login');
-  });
-  
-  module.exports = router;
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/content');
+    return;
+  }
+
+  res.render('login');
+});
+
+module.exports = router;

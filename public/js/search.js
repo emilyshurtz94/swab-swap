@@ -1,10 +1,9 @@
-const searchBtn = async (event) => {
+const searchBtn = document.getElementById('searchBtn');
+
+
+const searchHandler = async (event) => {
     event.preventDefault();
-    const zipcode = document.getElementById("zipCode")
-    if(zipcode.ok) {
-        window.location.href = "/content"
-    } else {
-        alert(zipcode.statusText)
-    }
+    const zipcode = document.getElementById("searchZipcode").value
+    window.location.href=`/content/${zipcode}`
 }
-document.addEventListener("click", searchBtn)
+    document.getElementById("searchForm").addEventListener("submit", searchHandler) 
